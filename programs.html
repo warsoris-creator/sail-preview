@@ -31,7 +31,7 @@
     }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo { height: 44px; flex-shrink: 0; }
-    .nav-logo video { height: 100%; width: auto; display: block; background: transparent; }
+    .nav-logo video { height: 100%; width: auto; display: none; }
     .nav-name { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 16px; color: var(--slate); }
     .nav-links { display: flex; gap: 32px; }
     .nav-links a { font-size: 13px; color: var(--slate); opacity: 0.55; text-decoration: none; transition: opacity 0.2s; }
@@ -823,10 +823,10 @@
 </div>
 
 <script>
-  // Hide webm logo on iOS/Safari (no webm support → black box)
+  // Show logo video only if webm is supported (hidden by default in CSS)
   const logoVideo = document.querySelector('.nav-logo video');
-  if (logoVideo && logoVideo.canPlayType('video/webm') === '') {
-    logoVideo.style.display = 'none';
+  if (logoVideo && logoVideo.canPlayType('video/webm') !== '') {
+    logoVideo.style.display = 'block';
   }
 
   const hamburger = document.getElementById('hamburger');
