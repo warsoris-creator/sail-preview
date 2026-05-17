@@ -169,10 +169,10 @@
 
     /* SECTION PHOTOS */
     .phil-left { display: flex; flex-direction: column; gap: 24px; }
-    .phil-photo { border-radius: 14px; overflow: hidden; max-height: 380px; }
-    .phil-photo img { width: 100%; height: 380px; object-fit: cover; object-position: center; display: block; border-radius: 14px; }
-    .programs-photo-strip { border-radius: var(--radius); margin-bottom: 28px; overflow: hidden; max-height: 340px; }
-    .programs-photo-strip img { width: 100%; height: 340px; object-fit: cover; object-position: center; display: block; }
+    .phil-photo { border-radius: 14px; overflow: hidden; background: rgba(66,66,66,0.04); }
+    .phil-photo img { width: 100%; height: 340px; object-fit: contain; object-position: center; display: block; border-radius: 14px; }
+    .programs-photo-strip { border-radius: var(--radius); margin-bottom: 28px; overflow: hidden; }
+    .programs-photo-strip img { width: 100%; height: 240px; object-fit: cover; object-position: center; display: block; }
 
     /* SCROLL REVEAL */
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -181,8 +181,8 @@
     /* PHOTO PLACEHOLDERS */
     .photo-placeholder { background: rgba(253,180,78,0.07); border: 1.5px dashed rgba(66,66,66,0.16); border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
     .photo-placeholder span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(66,66,66,0.28); font-weight: 500; }
-    .trainer-photo { width: 100%; height: 280px; margin-bottom: 20px; border-radius: 14px; overflow: hidden; }
-    .trainer-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 14px; }
+    .trainer-photo { width: 100%; margin-bottom: 20px; border-radius: 14px; overflow: hidden; background: rgba(66,66,66,0.04); }
+    .trainer-photo img { width: 100%; height: auto; display: block; border-radius: 14px; }
     .legacy-photo-row { display: flex; gap: 14px; align-items: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(66,66,66,0.08); }
     .legacy-photo { height: 80px; flex: 0 0 80px; border-radius: 10px; overflow: hidden; }
     .legacy-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
