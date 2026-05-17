@@ -823,6 +823,12 @@
 </div>
 
 <script>
+  // Hide webm logo on iOS/Safari (no webm support → black box)
+  const logoVideo = document.querySelector('.nav-logo video');
+  if (logoVideo && logoVideo.canPlayType('video/webm') === '') {
+    logoVideo.style.display = 'none';
+  }
+
   const hamburger = document.getElementById('hamburger');
   hamburger.addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.add('open');

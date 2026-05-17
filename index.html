@@ -110,13 +110,13 @@
 
     /* PHILOSOPHY */
     .philosophy-section { padding: 72px 48px; background: rgba(66,66,66,0.03); border-top: 1px solid rgba(66,66,66,0.08); }
-    .phil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 32px; }
-    .phil-quote-block { background: rgba(253,180,78,0.1); border-radius: 14px; padding: 24px 28px; }
-    .phil-quote { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.5; margin-bottom: 14px; }
+    .phil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 32px; }
+    .phil-quote-block { background: rgba(253,180,78,0.1); border-radius: 14px; padding: 24px 28px; margin-bottom: 4px; }
+    .phil-quote { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.55; margin-bottom: 12px; }
     .phil-author { font-size: 11px; opacity: 0.38; letter-spacing: 1px; text-transform: uppercase; }
-    .phil-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
-    .phil-item { display: flex; gap: 14px; align-items: flex-start; font-size: 14px; line-height: 1.75; opacity: 0.65; }
-    .phil-dot { width: 6px; height: 6px; background: var(--amber); border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+    .phil-list { list-style: none; display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
+    .phil-item { display: flex; gap: 14px; align-items: flex-start; font-size: 15px; line-height: 1.8; opacity: 0.78; }
+    .phil-dot { width: 7px; height: 7px; background: var(--amber); border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
 
     /* VALUES */
     .values-section { padding: 72px 48px; border-top: 1px solid rgba(66,66,66,0.08); }
@@ -570,6 +570,12 @@
     document.getElementById('mobileMenu').classList.remove('open');
     document.getElementById('mobileOverlay').classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  // Hide webm logo on iOS/Safari (no webm support → black box)
+  const logoVideo = document.querySelector('.nav-logo video');
+  if (logoVideo && logoVideo.canPlayType('video/webm') === '') {
+    logoVideo.style.display = 'none';
   }
 
   const revealObserver = new IntersectionObserver((entries) => {
