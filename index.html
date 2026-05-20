@@ -42,8 +42,9 @@
     .nav-logo.video-ready video { display: block; }
     .nav-logo.video-ready .nav-logo-fallback { opacity: 0; }
     .nav-name { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 16px; color: var(--slate); white-space: nowrap; }
+    .nav-subtitle { font-weight: 400; font-size: 12px; opacity: 0.4; }
     .nav-links { display: flex; gap: 32px; }
-    .nav-links a { font-size: 13px; color: var(--slate); opacity: 0.55; text-decoration: none; transition: opacity 0.2s; }
+    .nav-links a { font-size: 14px; color: var(--slate); opacity: 0.6; text-decoration: none; transition: opacity 0.2s; font-weight: 400; letter-spacing: 0.01em; }
     .nav-links a:hover { opacity: 1; }
     .nav-btn { background: var(--slate); color: var(--bg); border: none; border-radius: 100px; padding: 10px 22px; font-size: 13px; font-family: 'DM Sans', sans-serif; font-weight: 500; cursor: pointer; transition: opacity 0.2s; }
     .nav-btn:hover { opacity: 0.8; }
@@ -117,8 +118,8 @@
 
     /* PHILOSOPHY */
     .philosophy-section { padding: 72px 48px; background: rgba(66,66,66,0.03); border-top: 1px solid rgba(66,66,66,0.08); }
-    .phil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 32px; }
-    .phil-quote-block { background: rgba(253,180,78,0.1); border-radius: 14px; padding: 24px 28px; margin-bottom: 4px; }
+    .phil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-top: 28px; }
+    .phil-quote-block { background: rgba(253,180,78,0.1); border-radius: 14px; padding: 28px 32px; margin-top: 32px; }
     .phil-quote { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.55; margin-bottom: 12px; }
     .phil-author { font-size: 11px; opacity: 0.38; letter-spacing: 1px; text-transform: uppercase; }
     .phil-list { list-style: none; display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
@@ -149,7 +150,7 @@
     /* MISSION */
     .mission-section { padding: 72px 48px; border-top: 1px solid rgba(66,66,66,0.08); }
     .mission-box { background: rgba(253,180,78,0.1); border: 1.5px solid rgba(253,180,78,0.3); border-radius: var(--radius); padding: 48px; margin-top: 32px; }
-    .mission-text { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.55; color: var(--slate); max-width: 680px; }
+    .mission-text { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.55; color: var(--slate); max-width: 680px; margin: 0 auto; text-align: center; }
 
     /* CTA */
     .cta-section { padding: 0 48px 72px; }
@@ -176,7 +177,7 @@
 
     /* SECTION PHOTOS */
     .phil-left { display: flex; flex-direction: column; gap: 24px; }
-    .phil-photo { border-radius: 14px; overflow: hidden; max-width: 340px; }
+    .phil-photo { border-radius: 14px; overflow: hidden; }
     .programs-photo-strip { border-radius: var(--radius); margin-bottom: 28px; overflow: hidden; }
     .programs-photo-strip img { width: 100%; height: 520px; object-fit: cover; object-position: center 30%; display: block; }
 
@@ -233,6 +234,7 @@
       html { scroll-padding-top: 78px; }
       .site-nav { padding: 10px 20px; }
       .nav-links, .nav-btn { display: none; }
+      .nav-subtitle { display: none; }
       .hamburger { display: flex; }
 
       .hero { grid-template-columns: 1fr; min-height: auto; }
@@ -289,6 +291,19 @@
       .reveal { transition: none; opacity: 1; transform: none; }
       .mobile-menu { transition: none; }
     }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(66,66,66,0.18); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(66,66,66,0.32); }
+    * { scrollbar-width: thin; scrollbar-color: rgba(66,66,66,0.18) transparent; }
+
+    /* PROGRAMS CTA LINK */
+    .programs-more { display: flex; justify-content: center; margin-top: 28px; }
+    .btn-programs-more { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid rgba(66,66,66,0.2); border-radius: 100px; padding: 13px 28px; font-size: 14px; font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--slate); text-decoration: none; background: transparent; transition: background 0.2s, border-color 0.2s; }
+    .btn-programs-more:hover { background: rgba(66,66,66,0.05); border-color: rgba(66,66,66,0.35); }
+    .btn-programs-more svg { opacity: 0.5; }
   </style>
 </head>
 <body>
@@ -318,7 +333,7 @@
         <source src="strogino_sail_logo.webm" type="video/webm">
       </video>
     </div>
-    <span class="nav-name">Парус Строгино</span>
+    <span class="nav-name">Парус Строгино <span class="nav-subtitle">· Детский лагерь</span></span>
   </a>
   <div class="nav-links">
     <a href="programs.html">Программы</a>
@@ -347,7 +362,7 @@
   </div>
   <div class="hero-photo">
     <div class="hero-photo-inner">
-      <img src="images/sail-1.jpg" alt="Дети на парусах">
+      <img src="images/foto1.jpg" alt="Дети на парусах">
     </div>
   </div>
 </section>
@@ -389,6 +404,12 @@
         <div class="price-row"><span><svg class="price-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14M12 3L5 13h7M12 5l6 8h-6M4 17h16"/></svg>Месяц</span><strong>75 000 ₽</strong></div>
       </div>
     </div>
+  </div>
+  <div class="programs-more">
+    <a href="programs.html" class="btn-programs-more">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Ознакомиться с программами подробнее →
+    </a>
   </div>
 </section>
 
@@ -432,15 +453,13 @@
 <section class="philosophy-section" id="philosophy">
   <div class="section-label">Наш подход</div>
   <h2 class="section-h2">Философия лагеря</h2>
+  <div class="phil-quote-block reveal">
+    <div class="phil-quote">«На воде невозможно спрятаться — всё проявляется в действии»</div>
+    <div class="phil-author">— Олег Метельский, тренер и основатель</div>
+  </div>
   <div class="phil-grid reveal">
-    <div class="phil-left">
-      <div class="phil-quote-block">
-        <div class="phil-quote">«На воде невозможно спрятаться — всё проявляется в действии»</div>
-        <div class="phil-author">— Олег Метельский, тренер и основатель</div>
-      </div>
-      <div class="phil-photo">
-        <img src="pictures/философия лагеря.jpg" alt="Философия лагеря">
-      </div>
+    <div class="phil-photo">
+      <img src="pictures/философия лагеря.jpg" alt="Философия лагеря">
     </div>
     <ul class="phil-list">
       <li class="phil-item"><div class="phil-dot"></div><span>Тренер — связующее звено между ребёнком и родителем. Он наблюдает и помогает увидеть ребёнка в живом, реальном процессе.</span></li>
@@ -452,6 +471,7 @@
 </section>
 
 <!-- VALUES -->
+
 <section class="values-section">
   <div class="section-label">Что мы строим</div>
   <h2 class="section-h2">Наши ценности</h2>

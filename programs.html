@@ -39,8 +39,9 @@
     .nav-logo.video-ready video { display: block; }
     .nav-logo.video-ready .nav-logo-fallback { opacity: 0; }
     .nav-name { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 16px; color: var(--slate); white-space: nowrap; }
+    .nav-subtitle { font-weight: 400; font-size: 12px; opacity: 0.4; }
     .nav-links { display: flex; gap: 32px; }
-    .nav-links a { font-size: 13px; color: var(--slate); opacity: 0.55; text-decoration: none; transition: opacity 0.2s; }
+    .nav-links a { font-size: 14px; color: var(--slate); opacity: 0.6; text-decoration: none; transition: opacity 0.2s; font-weight: 400; letter-spacing: 0.01em; }
     .nav-links a:hover, .nav-links a.active { opacity: 1; }
     .nav-links a.active { font-weight: 500; }
     .nav-btn { background: var(--slate); color: var(--bg); border: none; border-radius: 100px; padding: 10px 22px; font-size: 13px; font-family: 'DM Sans', sans-serif; font-weight: 500; cursor: pointer; }
@@ -263,6 +264,7 @@
       .site-nav { padding: 10px 20px; }
       .nav-links, .nav-btn { display: none; }
       .hamburger { display: flex; }
+      .nav-subtitle { display: none; }
 
       .page-hero { grid-template-columns: 1fr; padding: 36px 20px 32px; gap: 32px; }
       .page-h1 { font-size: 36px; }
@@ -325,6 +327,13 @@
       .mobile-menu { transition: none; }
       .prog-cta, .btn-cta { transition: none; }
     }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(66,66,66,0.18); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(66,66,66,0.32); }
+    * { scrollbar-width: thin; scrollbar-color: rgba(66,66,66,0.18) transparent; }
   </style>
 </head>
 <body>
@@ -354,13 +363,13 @@
         <source src="strogino_sail_logo.webm" type="video/webm">
       </video>
     </div>
-    <span class="nav-name">Парус Строгино</span>
+    <span class="nav-name">Парус Строгино <span class="nav-subtitle">· Детский лагерь</span></span>
   </a>
   <div class="nav-links">
-    <a href="index.html">Главная</a>
     <a href="programs.html" class="active">Программы</a>
     <a href="index.html#philosophy">Философия</a>
     <a href="index.html#about">О нас</a>
+    <a href="index.html#cta">Контакты</a>
   </div>
   <button class="nav-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Записаться →</button>
   <button class="hamburger" id="hamburger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -405,6 +414,15 @@
         <span>Программы для всех уровней</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule-section" id="schedule">
+  <div class="section-label">Когда приходить</div>
+  <h2 class="section-h2 schedule-heading" id="scheduleHeading">Расписание</h2>
+  <div class="schedule-grid" id="scheduleGrid">
+    <!-- Заполняется из localStorage -->
   </div>
 </section>
 
@@ -728,15 +746,6 @@
         <div class="tl-desc">Тренер даёт каждому ребёнку личную обратную связь. По итогам недели — письменный отчёт родителям.</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- SCHEDULE -->
-<section class="schedule-section" id="schedule">
-  <div class="section-label">Когда приходить</div>
-  <h2 class="section-h2 schedule-heading" id="scheduleHeading">Расписание</h2>
-  <div class="schedule-grid" id="scheduleGrid">
-    <!-- Заполняется из localStorage -->
   </div>
 </section>
 
