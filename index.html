@@ -303,6 +303,65 @@
     .programs-more { margin-top: 16px; }
     .btn-programs-more { display: flex; align-items: center; justify-content: center; width: 100%; border: none; border-radius: 100px; padding: 15px 28px; font-size: 14px; font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--slate); text-decoration: none; background: var(--amber); transition: transform 0.15s, box-shadow 0.15s; }
     .btn-programs-more:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(253,180,78,0.4); }
+
+    /* ═══════════════════════════════
+       DESIGN BOOST
+    ═══════════════════════════════ */
+
+    /* Ambient grain overlay — тактильная глубина */
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 9998;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.028;
+      mix-blend-mode: multiply;
+    }
+
+    /* Hero — тёплый ambient glow */
+    .hero { background: radial-gradient(ellipse 70% 80% at 80% 40%, rgba(253,180,78,0.10) 0%, transparent 65%), var(--bg); }
+
+    /* h1 — тighter, more editorial */
+    h1 { letter-spacing: -0.025em; }
+
+    /* Nav links — underline slide animation */
+    .nav-links a { position: relative; padding-bottom: 2px; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 1.5px; background: var(--amber); border-radius: 2px; transition: width 0.25s cubic-bezier(0.4,0,0.2,1); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+    /* Cards — warm amber-tinted shadows */
+    .price-card { box-shadow: 0 2px 8px rgba(140,80,10,0.05), 0 18px 48px rgba(140,80,10,0.09); }
+    .price-card:hover { box-shadow: 0 4px 16px rgba(140,80,10,0.08), 0 28px 64px rgba(140,80,10,0.13); }
+    .value-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .value-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(140,80,10,0.11); }
+    .partner-card { box-shadow: 0 2px 8px rgba(140,80,10,0.05), 0 18px 48px rgba(140,80,10,0.08); }
+    .trainer-card { box-shadow: 0 4px 20px rgba(140,80,10,0.07); }
+
+    /* Section label — refined spacing */
+    .section-label { letter-spacing: 3px; }
+
+    /* Eyebrow — subtle pulse on the amber line */
+    .eyebrow-line { opacity: 0.8; }
+
+    /* Winter section — depth gradient */
+    .winter-section { background: linear-gradient(145deg, #383838 0%, #424242 50%, #3d3d3d 100%); }
+
+    /* Mission box — warmer feel */
+    .mission-box { background: linear-gradient(135deg, rgba(253,180,78,0.12) 0%, rgba(253,180,78,0.07) 100%); }
+
+    /* CTA box — richer dark */
+    .cta-box { background: linear-gradient(135deg, #3a3a3a 0%, #424242 60%, #3e3d3c 100%); }
+
+    /* Stat bar — subtle left border accent */
+    .stat-item { border-left: 2px solid rgba(253,180,78,0.2); }
+    .stat-item:first-child { border-left: none; }
+
+    /* Buttons — sharper transitions */
+    .btn-primary, .btn-cta { letter-spacing: 0.01em; }
+    .btn-primary:hover { box-shadow: 0 6px 28px rgba(253,180,78,0.45); }
+
+    /* Phil quote — warmer */
+    .phil-quote-block { background: linear-gradient(135deg, rgba(253,180,78,0.13) 0%, rgba(253,180,78,0.07) 100%); border-left: 3px solid var(--amber); border-radius: 0 14px 14px 0; padding-left: 28px; }
   </style>
 </head>
 <body>

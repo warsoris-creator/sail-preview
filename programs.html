@@ -335,6 +335,24 @@
     ::-webkit-scrollbar-thumb { background: rgba(66,66,66,0.18); border-radius: 10px; }
     ::-webkit-scrollbar-thumb:hover { background: rgba(66,66,66,0.32); }
     * { scrollbar-width: thin; scrollbar-color: rgba(66,66,66,0.18) transparent; }
+
+    /* ═══════════════════════════════
+       DESIGN BOOST
+    ═══════════════════════════════ */
+    body::after { content: ''; position: fixed; inset: 0; z-index: 9998; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.028; mix-blend-mode: multiply; }
+    h1, .page-h1 { letter-spacing: -0.025em; }
+    .nav-links a { position: relative; padding-bottom: 2px; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 1.5px; background: var(--amber); border-radius: 2px; transition: width 0.25s cubic-bezier(0.4,0,0.2,1); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .program-card { box-shadow: 0 2px 8px rgba(140,80,10,0.05), 0 18px 48px rgba(140,80,10,0.09); }
+    .boat-card { transition: transform 0.22s ease, box-shadow 0.22s ease; box-shadow: 0 2px 8px rgba(140,80,10,0.04), 0 14px 40px rgba(140,80,10,0.08); }
+    .boat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(140,80,10,0.1); }
+    .quick-stat { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .quick-stat:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(140,80,10,0.1); }
+    .section-label { letter-spacing: 3px; }
+    .cta-box { background: linear-gradient(135deg, #3a3a3a 0%, #424242 60%, #3e3d3c 100%); }
+    .schedule-item { transition: background 0.18s, box-shadow 0.18s; }
+    .schedule-item:hover { box-shadow: 0 4px 16px rgba(140,80,10,0.08); }
   </style>
 </head>
 <body>
