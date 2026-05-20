@@ -118,7 +118,7 @@
 
     /* PHILOSOPHY */
     .philosophy-section { padding: 72px 48px; background: rgba(66,66,66,0.03); border-top: 1px solid rgba(66,66,66,0.08); }
-    .phil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-top: 28px; }
+    .phil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; margin-top: 28px; }
     .phil-quote-block { background: rgba(253,180,78,0.1); border-radius: 14px; padding: 28px 32px; margin-top: 32px; }
     .phil-quote { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.55; margin-bottom: 12px; }
     .phil-author { font-size: 11px; opacity: 0.38; letter-spacing: 1px; text-transform: uppercase; }
@@ -177,7 +177,7 @@
 
     /* SECTION PHOTOS */
     .phil-left { display: flex; flex-direction: column; gap: 24px; }
-    .phil-photo { border-radius: 14px; overflow: hidden; max-width: 360px; }
+    .phil-photo { border-radius: 16px; overflow: hidden; max-width: 460px; }
     .programs-photo-strip { border-radius: var(--radius); margin-bottom: 28px; overflow: hidden; }
     .programs-photo-strip img { width: 100%; height: 520px; object-fit: cover; object-position: center 30%; display: block; }
 
@@ -193,7 +193,7 @@
     .legacy-photo-row { display: flex; gap: 14px; align-items: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(66,66,66,0.08); }
     .legacy-photo { height: 80px; flex: 0 0 80px; border-radius: 10px; overflow: hidden; }
     .legacy-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .phil-photo img { max-width: 100%; max-height: 280px; height: auto; object-fit: contain; display: block; border-radius: 14px; }
+    .phil-photo img { width: 100%; max-height: 380px; height: auto; object-fit: cover; display: block; }
     .legacy-photo-name { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px; margin-bottom: 4px; opacity: 0.65; }
     .legacy-photo-info { font-size: 12px; opacity: 0.4; line-height: 1.65; }
 
@@ -300,10 +300,9 @@
     * { scrollbar-width: thin; scrollbar-color: rgba(66,66,66,0.18) transparent; }
 
     /* PROGRAMS CTA LINK */
-    .programs-more { display: flex; justify-content: center; margin-top: 28px; }
-    .btn-programs-more { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid rgba(66,66,66,0.2); border-radius: 100px; padding: 13px 28px; font-size: 14px; font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--slate); text-decoration: none; background: transparent; transition: background 0.2s, border-color 0.2s; }
-    .btn-programs-more:hover { background: rgba(66,66,66,0.05); border-color: rgba(66,66,66,0.35); }
-    .btn-programs-more svg { opacity: 0.5; }
+    .programs-more { margin-top: 16px; }
+    .btn-programs-more { display: flex; align-items: center; justify-content: center; width: 100%; border: none; border-radius: 100px; padding: 15px 28px; font-size: 14px; font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--slate); text-decoration: none; background: var(--amber); transition: transform 0.15s, box-shadow 0.15s; }
+    .btn-programs-more:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(253,180,78,0.4); }
   </style>
 </head>
 <body>
@@ -406,10 +405,7 @@
     </div>
   </div>
   <div class="programs-more">
-    <a href="programs.html" class="btn-programs-more">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-      Ознакомиться с программами подробнее →
-    </a>
+    <a href="programs.html" class="btn-programs-more">Ознакомиться с программами подробнее →</a>
   </div>
 </section>
 
