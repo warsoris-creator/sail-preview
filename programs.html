@@ -144,6 +144,13 @@
     .day-tab { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; border: 1.5px solid rgba(232,212,177,0.15); border-radius: 100px; padding: 9px 20px; cursor: pointer; background: transparent; color: var(--slate); opacity: 0.5; transition: all 0.2s; }
     .day-tab.active { background: var(--slate); color: var(--bg); border-color: var(--slate); opacity: 1; }
 
+    .day-intro { max-width: 720px; margin-bottom: 40px; }
+    .day-badge { display: inline-block; background: rgba(242,176,74,0.16); color: var(--amber); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 7px 16px; border-radius: 100px; margin-bottom: 20px; }
+    .day-intro p { font-size: 15px; line-height: 1.6; color: rgba(232,212,177,0.72); margin-bottom: 18px; }
+    .day-facts { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .day-facts li { position: relative; padding-left: 22px; font-size: 14px; line-height: 1.55; color: rgba(232,212,177,0.72); }
+    .day-facts li::before { content: ''; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+
     .day-timeline { display: none; }
     .day-timeline.active { display: flex; flex-direction: column; gap: 0; }
 
@@ -637,196 +644,125 @@
 
 <!-- TYPICAL DAY -->
 <section class="day-section" id="day">
-  <div class="section-label">Как проходит день</div>
-  <h2 class="section-h2">Типичный день в лагере</h2>
+  <div class="section-label">Детский лагерь «Строгино» ⛵️</div>
+  <h2 class="section-h2">Летний дневной формат</h2>
 
-  <div class="day-tabs">
-    <button class="day-tab active" onclick="switchDay('base', this)">Базовая</button>
-    <button class="day-tab" onclick="switchDay('pro', this)">Норд-Вест Pro</button>
+  <div class="day-intro">
+    <div class="day-badge">Летний сезон — 3 месяца · день 10:00–18:00</div>
+    <p>Дорогие родители! Открываем летний лагерь по парусному спорту. Формат дневной: дети находятся в лагере с 10:00 до 18:00, проходят обучение парусному делу, участвуют в командных играх и развивают навыки взаимодействия и самостоятельности.</p>
+    <ul class="day-facts">
+      <li>Раздевалки находятся в специально оборудованной зоне на территории клуба</li>
+      <li>Безопасное хранение вещей детей обеспечено</li>
+    </ul>
   </div>
 
-  <!-- BASE DAY -->
-  <div class="day-timeline active" id="day-base">
+  <!-- SUMMER CAMP DAY -->
+  <div class="day-timeline active" id="day-camp">
     <div class="timeline-item">
       <div class="tl-left">
-        <div class="tl-time">08:30</div>
+        <div class="tl-time">10:00</div>
         <div class="tl-dot"></div>
         <div class="tl-line"></div>
       </div>
       <div class="tl-right">
         <div class="tl-tag">Сбор</div>
-        <div class="tl-title">Приём детей на базе</div>
-        <div class="tl-desc">Встречаем, знакомимся, настраиваемся на день. Инструктаж по безопасности на воде.</div>
+        <div class="tl-title">Сбор участников</div>
+        <div class="tl-desc">Встреча детей, организационные моменты, подготовка к дню.</div>
       </div>
     </div>
     <div class="timeline-item">
       <div class="tl-left">
-        <div class="tl-time">09:00</div>
+        <div class="tl-time">10:15–11:00</div>
         <div class="tl-dot"></div>
         <div class="tl-line"></div>
       </div>
       <div class="tl-right">
-        <div class="tl-tag">Разминка</div>
-        <div class="tl-title">Физическая подготовка и разминка</div>
-        <div class="tl-desc">Лёгкая зарядка, растяжка, командные упражнения. Готовим тело к активному дню на воде.</div>
+        <div class="tl-tag">Старт</div>
+        <div class="tl-title">Разминка и командный старт</div>
+        <div class="tl-desc">Общая физическая подготовка, упражнения на координацию, командные задания, инструктаж по технике безопасности и плану дня.</div>
       </div>
     </div>
     <div class="timeline-item">
       <div class="tl-left">
-        <div class="tl-time">09:30</div>
+        <div class="tl-time">11:00–13:00</div>
         <div class="tl-dot"></div>
         <div class="tl-line"></div>
       </div>
       <div class="tl-right">
         <div class="tl-tag">Вода</div>
-        <div class="tl-title">Парусная тренировка</div>
-        <div class="tl-desc">Выходим на воду. Яхты Оптимист и Луч в зависимости от уровня. Групповая работа с тренером.</div>
+        <div class="tl-title">Первая тренировка на воде</div>
+        <div class="tl-desc">Практика на яхтах («Оптимист», «Лазер»), работа с ветром, управление лодкой, командное взаимодействие, сопровождение инструкторов.</div>
       </div>
     </div>
     <div class="timeline-item">
       <div class="tl-left">
-        <div class="tl-time">12:00</div>
+        <div class="tl-time">13:00–13:30</div>
+        <div class="tl-dot"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-tag">Отдых</div>
+        <div class="tl-title">Подготовка к обеду / отдых</div>
+        <div class="tl-desc">Свободное время, восстановление, спокойное общение.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-left">
+        <div class="tl-time">13:30–14:30</div>
         <div class="tl-dot"></div>
         <div class="tl-line"></div>
       </div>
       <div class="tl-right">
         <div class="tl-tag">Перерыв</div>
-        <div class="tl-title">Обед и отдых</div>
-        <div class="tl-desc">Обеденный перерыв. Время для общения, отдыха и разбора утренней тренировки.</div>
+        <div class="tl-title">Обед</div>
+        <div class="tl-desc">Полноценный обед и спокойный перерыв.</div>
       </div>
     </div>
     <div class="timeline-item">
       <div class="tl-left">
-        <div class="tl-time">13:30</div>
+        <div class="tl-time">14:30–15:30</div>
         <div class="tl-dot"></div>
         <div class="tl-line"></div>
       </div>
       <div class="tl-right">
         <div class="tl-tag">Активность</div>
-        <div class="tl-title">Сапсёрфинг, игры и командные активности</div>
-        <div class="tl-desc">Сапсёрфинг, водные игры и квесты. Развиваем командный дух и самостоятельность.</div>
+        <div class="tl-title">Отдых и свободная активность</div>
+        <div class="tl-desc">Настольные игры, общение, спокойные занятия, восстановление после первой тренировки.</div>
       </div>
     </div>
     <div class="timeline-item">
       <div class="tl-left">
-        <div class="tl-time">16:00</div>
+        <div class="tl-time">15:30–17:00</div>
+        <div class="tl-dot"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-right">
+        <div class="tl-tag">Вода</div>
+        <div class="tl-title">Вторая тренировка / водные и командные активности</div>
+        <div class="tl-desc">Дополнительный выход на воду (или береговые активности), SUP, командные задания, игровые и спортивные форматы.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-left">
+        <div class="tl-time">17:00–17:30</div>
         <div class="tl-dot"></div>
         <div class="tl-line"></div>
       </div>
       <div class="tl-right">
         <div class="tl-tag">Итоги</div>
-        <div class="tl-title">Разбор дня и подведение итогов</div>
-        <div class="tl-desc">Обсуждаем что получилось, что было сложно. Тренер даёт обратную связь группе.</div>
+        <div class="tl-title">Разбор дня</div>
+        <div class="tl-desc">Обсуждение результатов, разбор ошибок и успехов, короткая теория, подведение итогов дня.</div>
       </div>
     </div>
     <div class="timeline-item">
       <div class="tl-left">
-        <div class="tl-time">17:00</div>
+        <div class="tl-time">17:30–18:00</div>
         <div class="tl-dot"></div>
       </div>
       <div class="tl-right">
         <div class="tl-tag">Завершение</div>
-        <div class="tl-title">Сбор и передача родителям</div>
-        <div class="tl-desc">Убираем оборудование, прощаемся. Родители забирают детей с базы.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PRO DAY -->
-  <div class="day-timeline" id="day-pro">
-    <div class="timeline-item">
-      <div class="tl-left">
-        <div class="tl-time">08:30</div>
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
-      </div>
-      <div class="tl-right">
-        <div class="tl-tag">Сбор</div>
-        <div class="tl-title">Приём и индивидуальный настрой</div>
-        <div class="tl-desc">Тренер встречает каждого ребёнка, отмечает состояние и настрой. Короткий разбор задач на день.</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-left">
-        <div class="tl-time">09:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
-      </div>
-      <div class="tl-right">
-        <div class="tl-tag">Теория</div>
-        <div class="tl-title">Теория паруса и разбор техники</div>
-        <div class="tl-desc">Разбираем ошибки, изучаем тактику, смотрим видео. Понимание процесса перед практикой.</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-left">
-        <div class="tl-time">09:45</div>
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
-      </div>
-      <div class="tl-right">
-        <div class="tl-tag">Вода — блок 1</div>
-        <div class="tl-title">Первая парусная сессия</div>
-        <div class="tl-desc">Мини-группа выходит на воду. Тренер работает индивидуально с каждым, фиксирует наблюдения.</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-left">
-        <div class="tl-time">11:30</div>
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
-      </div>
-      <div class="tl-right">
-        <div class="tl-tag">Разбор</div>
-        <div class="tl-title">Дебриф после первой сессии</div>
-        <div class="tl-desc">Разбор ошибок, личная обратная связь. Учимся осознанно анализировать своё действие на воде.</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-left">
-        <div class="tl-time">12:15</div>
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
-      </div>
-      <div class="tl-right">
-        <div class="tl-tag">Перерыв</div>
-        <div class="tl-title">Обед и восстановление</div>
-        <div class="tl-desc">Полноценный отдых. Тренер фиксирует наблюдения по каждому ребёнку за первую половину дня.</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-left">
-        <div class="tl-time">13:30</div>
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
-      </div>
-      <div class="tl-right">
-        <div class="tl-tag">Вода — блок 2</div>
-        <div class="tl-title">Вторая парусная сессия + гонка</div>
-        <div class="tl-desc">Применяем разобранные техники. Учебная гонка: работа с давлением, принятие решений в реальном времени.</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-left">
-        <div class="tl-time">15:30</div>
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
-      </div>
-      <div class="tl-right">
-        <div class="tl-tag">Сапсёрфинг / Отдых</div>
-        <div class="tl-title">Свободная активность</div>
-        <div class="tl-desc">Сапсёрфинг, свободное катание, командные игры. Время без структуры — важно для восстановления и живого взаимодействия.</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-left">
-        <div class="tl-time">16:30</div>
-        <div class="tl-dot"></div>
-      </div>
-      <div class="tl-right">
-        <div class="tl-tag">Итоги дня</div>
-        <div class="tl-title">Личный разбор + передача родителям</div>
-        <div class="tl-desc">Тренер даёт каждому ребёнку личную обратную связь. По итогам недели — письменный отчёт родителям.</div>
+        <div class="tl-title">Завершение дня</div>
+        <div class="tl-desc">Спокойное окончание программы, встреча детей родителями, обратная связь при необходимости.</div>
       </div>
     </div>
   </div>
@@ -959,13 +895,6 @@
     document.getElementById('mobileMenu').classList.remove('open');
     document.getElementById('mobileOverlay').classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
-  }
-
-  function switchDay(type, btn) {
-    document.querySelectorAll('.day-timeline').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.day-tab').forEach(b => b.classList.remove('active'));
-    document.getElementById('day-' + type).classList.add('active');
-    btn.classList.add('active');
   }
 
   // ── SCHEDULE ──────────────────────────────────────────────────
