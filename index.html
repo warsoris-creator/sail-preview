@@ -38,8 +38,8 @@
       border-bottom: 1px solid rgba(232,212,177,0.12);
     }
     .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; min-width: 0; }
-    .nav-logo { width: 46px; height: 46px; flex-shrink: 0; position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 50%; box-shadow: 0 0 0 1px rgba(232,212,177,0.35), 0 6px 20px rgba(0,8,30,0.4); }
-    .nav-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .nav-logo { width: 52px; height: 52px; padding: 5px; flex-shrink: 0; position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 50%; background: linear-gradient(135deg, #fffaf0 0%, #f1ddb8 100%); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 0 0 1px rgba(232,212,177,0.32), 0 8px 24px rgba(0,8,30,0.36); }
+    .nav-logo img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
     .nav-name { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 16px; color: var(--slate); white-space: nowrap; letter-spacing: 0.01em; }
     .nav-subtitle { font-weight: 400; font-size: 12px; opacity: 0.5; }
     .nav-links { display: flex; gap: 32px; }
@@ -279,7 +279,7 @@
     }
 
     @media (max-width: 390px) {
-      .nav-logo { width: 42px; height: 42px; }
+      .nav-logo { width: 46px; height: 46px; padding: 4px; }
       .nav-name { font-size: 15px; }
       h1 { font-size: 34px; }
       .hero-sub { font-size: 13px; }
@@ -361,6 +361,104 @@
 
     /* Phil quote — warmer */
     .phil-quote-block { background: linear-gradient(135deg, rgba(242,176,74,0.13) 0%, rgba(242,176,74,0.07) 100%); border-left: 3px solid var(--amber); border-radius: 0 14px 14px 0; padding-left: 28px; }
+    /* Final brand polish */
+    .nav-subtitle { opacity: 0.72; }
+    .hero-sub,
+    .about-text p,
+    .trainer-desc,
+    .trainer-legacy-text,
+    .phil-item,
+    .value-desc,
+    .stat-label,
+    .footer-contact {
+      opacity: 1;
+      color: rgba(232,212,177,0.72);
+    }
+    .hero-tagline,
+    .trainer-role,
+    .legacy-photo-info,
+    .footer-tagline { opacity: 1; color: rgba(232,212,177,0.48); }
+    .philosophy-section,
+    .about-section {
+      background:
+        radial-gradient(ellipse 68% 70% at 12% 18%, rgba(242,176,74,0.07), transparent 62%),
+        rgba(232,212,177,0.035);
+    }
+    .phil-grid { grid-template-columns: minmax(280px, 430px) 1fr; gap: 42px; align-items: center; }
+    .phil-photo {
+      width: 100%;
+      max-width: 430px;
+      aspect-ratio: 4 / 5;
+      border-radius: 22px;
+      border: 1.5px solid rgba(232,212,177,0.16);
+      box-shadow: 0 24px 70px rgba(0,10,40,0.22);
+      background: rgba(232,212,177,0.08);
+    }
+    .phil-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(1.04) contrast(1.02);
+    }
+    .about-grid { align-items: center; }
+    .legacy-photo-row {
+      background: rgba(232,212,177,0.06);
+      border: 1.5px solid rgba(232,212,177,0.12);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .legacy-photo-name { opacity: 1; color: var(--slate); }
+    .trainer-card {
+      background: linear-gradient(145deg, rgba(232,212,177,0.10), rgba(232,212,177,0.05));
+      box-shadow: 0 18px 52px rgba(0,10,40,0.15);
+    }
+    .trainer-photo {
+      aspect-ratio: 16 / 11;
+      box-shadow: 0 16px 42px rgba(0,10,40,0.16);
+    }
+    .trainer-photo img { width: 100%; height: 100%; max-height: none; object-fit: cover; }
+    .partner-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(90deg, #fffaf0 0%, rgba(255,250,240,0.96) 35%, rgba(247,234,205,0.90) 68%, rgba(232,212,177,0.82) 100%);
+      border: 1.5px solid rgba(255,255,255,0.62);
+      box-shadow: 0 18px 54px rgba(0,10,40,0.16);
+    }
+    .partner-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(242,176,74,0.12), transparent 46%);
+    }
+    .partner-logo,
+    .partner-content { position: relative; z-index: 1; }
+    .partner-logo {
+      width: 170px;
+      min-height: 132px;
+      padding: 18px;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 14px 34px rgba(16,39,80,0.16);
+    }
+    .partner-logo img { max-height: 100px; animation: none; }
+    .partner-content { color: #102750; }
+    .partner-text { opacity: 1; color: rgba(16,39,80,0.82); }
+    .partner-desire { opacity: 1; color: #102750; }
+    .cta-note { color: rgba(232,212,177,0.62); }
+
+    @media (max-width: 820px) {
+      .phil-grid { grid-template-columns: 1fr; }
+      .phil-photo { max-width: none; aspect-ratio: 16 / 12; }
+      .partner-card {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 24px;
+        background: linear-gradient(180deg, #fffaf0 0%, rgba(255,250,240,0.96) 50%, rgba(232,212,177,0.86) 100%);
+      }
+      .partner-logo { width: min(180px, 100%); margin: 0 auto; }
+    }
   </style>
 </head>
 <body>
@@ -510,7 +608,7 @@
   </div>
   <div class="phil-grid reveal">
     <div class="phil-photo">
-      <img src="pictures/философия лагеря.jpg" alt="Философия лагеря">
+      <img src="images/foto1.jpg" alt="Философия лагеря">
     </div>
     <ul class="phil-list">
       <li class="phil-item"><div class="phil-dot"></div><span>Тренер — связующее звено между ребёнком и родителем. Он наблюдает и помогает увидеть ребёнка в живом, реальном процессе.</span></li>
