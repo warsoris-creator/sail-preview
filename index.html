@@ -47,7 +47,7 @@
     .nav-logo { width: 52px; height: 52px; padding: 5px; flex-shrink: 0; position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 50%; background: linear-gradient(135deg, #fffaf0 0%, #f1ddb8 100%); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 0 0 1px rgba(232,212,177,0.32), 0 8px 24px rgba(0,8,30,0.36); }
     .nav-logo img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
     .nav-name { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: var(--fs-body); color: var(--slate); white-space: nowrap; letter-spacing: 0.01em; }
-    .nav-subtitle { font-weight: 400; font-size: var(--fs-small); opacity: 0.5; }
+    .nav-subtitle { font-weight: 400; font-size: var(--fs-body); opacity: 0.5; }
     .nav-links { display: flex; gap: 32px; }
     .nav-links a { font-size: var(--fs-body); color: var(--slate); opacity: 0.6; text-decoration: none; transition: opacity 0.2s; font-weight: 400; letter-spacing: 0.01em; }
     .nav-links a:hover { opacity: 1; }
@@ -554,9 +554,9 @@
     .day-facts li::before { content: ''; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
     .day-timeline { display: none; }
     .day-timeline.active { display: flex; flex-direction: column; gap: 0; }
-    .timeline-item { display: grid; grid-template-columns: max-content 1fr; gap: 0; position: relative; }
+    .timeline-item { display: grid; grid-template-columns: 92px 1fr; gap: 0; position: relative; }
     .timeline-item:last-child .tl-line { display: none; }
-    .tl-left { display: flex; flex-direction: column; align-items: center; padding-right: 20px; }
+    .tl-left { display: flex; flex-direction: column; align-items: center; padding-right: 14px; }
     .tl-time { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: var(--fs-small); color: var(--amber); white-space: nowrap; padding-top: 2px; }
     .tl-dot { width: 10px; height: 10px; background: var(--amber); border-radius: 50%; margin: 8px 0 0; flex-shrink: 0; }
     .tl-line { width: 1.5px; background: rgba(242,176,74,0.3); flex: 1; min-height: 32px; margin: 4px 0; }
@@ -911,16 +911,16 @@
 
 <!-- WINTER -->
 <section class="winter-section">
-  <span class="snowflake" style="left:5%;animation-duration:6s;animation-delay:0s;font-size:12px">❄</span>
-  <span class="snowflake" style="left:15%;animation-duration:8s;animation-delay:1s;font-size:10px">❄</span>
-  <span class="snowflake" style="left:25%;animation-duration:7s;animation-delay:2s;font-size:16px">❄</span>
-  <span class="snowflake" style="left:35%;animation-duration:5s;animation-delay:0.5s;font-size:8px">❄</span>
-  <span class="snowflake" style="left:45%;animation-duration:9s;animation-delay:3s;font-size:14px">❄</span>
-  <span class="snowflake" style="left:55%;animation-duration:6.5s;animation-delay:1.5s;font-size:10px">❄</span>
-  <span class="snowflake" style="left:65%;animation-duration:7.5s;animation-delay:0s;font-size:12px">❄</span>
-  <span class="snowflake" style="left:75%;animation-duration:5.5s;animation-delay:2.5s;font-size:16px">❄</span>
-  <span class="snowflake" style="left:85%;animation-duration:8.5s;animation-delay:1s;font-size:9px">❄</span>
-  <span class="snowflake" style="left:92%;animation-duration:6s;animation-delay:3.5s;font-size:13px">❄</span>
+  <span class="snowflake" style="left:5%;animation-duration:6s;animation-delay:0s;font-size:var(--fs-small)">❄</span>
+  <span class="snowflake" style="left:15%;animation-duration:8s;animation-delay:1s;font-size:var(--fs-small)">❄</span>
+  <span class="snowflake" style="left:25%;animation-duration:7s;animation-delay:2s;font-size:var(--fs-body)">❄</span>
+  <span class="snowflake" style="left:35%;animation-duration:5s;animation-delay:0.5s;font-size:var(--fs-small)">❄</span>
+  <span class="snowflake" style="left:45%;animation-duration:9s;animation-delay:3s;font-size:var(--fs-body)">❄</span>
+  <span class="snowflake" style="left:55%;animation-duration:6.5s;animation-delay:1.5s;font-size:var(--fs-small)">❄</span>
+  <span class="snowflake" style="left:65%;animation-duration:7.5s;animation-delay:0s;font-size:var(--fs-small)">❄</span>
+  <span class="snowflake" style="left:75%;animation-duration:5.5s;animation-delay:2.5s;font-size:var(--fs-body)">❄</span>
+  <span class="snowflake" style="left:85%;animation-duration:8.5s;animation-delay:1s;font-size:var(--fs-small)">❄</span>
+  <span class="snowflake" style="left:92%;animation-duration:6s;animation-delay:3.5s;font-size:var(--fs-small)">❄</span>
   <div class="winter-content">
   <div class="section-label">Круглый год</div>
   <h2 class="section-h2">Норд-Вест — это не только летний сезон</h2>
@@ -1311,7 +1311,7 @@
     const list  = document.getElementById('adminList');
     if (!list) return;
     if (!items.length) {
-      list.innerHTML = '<div style="opacity:.35;font-size:13px;padding:10px 14px">Нет записей — добавьте первую ниже</div>';
+      list.innerHTML = '<div style="opacity:.35;font-size:var(--fs-small);padding:10px 14px">Нет записей — добавьте первую ниже</div>';
       return;
     }
     list.innerHTML = items.map(item => `
